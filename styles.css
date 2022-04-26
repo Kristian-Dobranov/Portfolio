@@ -80,6 +80,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #fff5ff;
+}
+
 h1,
 h2,
 h3,
@@ -137,8 +141,6 @@ li {
   overflow: hidden;
   -webkit-box-shadow: 1px 3px 14px 0px #000000;
   box-shadow: 1px 3px 14px 0px #000000;
-  border-radius: 50px;
-  margin-top: 1rem;
 }
 .navigation {
   height: 75px;
@@ -209,6 +211,21 @@ li {
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
   margin-bottom: 26px;
+  animation: animate-profile-picture 800ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .about-me__picture {
@@ -246,21 +263,40 @@ li {
   color: red;
 }
 
-.fa-github {
-  transition: all 200ms ease;
-}
-
-.fa-github:hover {
-  color: #2d333b;
-}
 .about-me_img--container {
   display: flex;
   justify-content: center;
 }
 
 .about-me__img {
-  width: 60%;
+  width: 35%;
   margin-right: 5rem;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  z-index: -1;
+  animation: fade-up 1s;
+}
+
+.about-me__img1 {
+  width: 35%;
+  margin-right: 5rem;
+  position: absolute;
+  top: 6rem;
+  left: 5rem;
+  z-index: -1;
+  transform: scaleX(-1);
+  animation: fade-up 1s;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
 
 /* TECH STACK [START] */
